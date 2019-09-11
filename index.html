@@ -1,0 +1,109 @@
+<!--
+ * @Author: wzheng(hb_wangzheng@163.com)
+ * @Github: https://github.com/wayley
+ * @Company: Fih-ACKN
+ * @Date: 2019-09-11 08:57:35
+ * @LastEditors: wzheng(hb_wangzheng@163.com)
+ * @LastEditTime: 2019-09-11 18:55:25
+ * @Description:
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  .main {
+    width: 400px;
+  }
+
+  .search-contain input {
+    width: 300px;
+    padding: 7px 20px;
+  }
+
+  .search-contain .icon {
+    display: inline-block;
+    width: 33px;
+    height: 30px;
+    background: #999;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-left: 15px;
+  }
+
+  .list {
+    margin-top: 20px;
+  }
+
+  .card {
+    border-bottom: 1px solid #ccc;
+    line-height: 2.5
+  }
+
+  .card-header {
+    float: right;
+  }
+
+  .card-header span {
+    display: inline-block;
+    color: #20a8d8;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+</style>
+
+<body>
+  <div class="main">
+    <div class="search-contain" id="search-contain">
+      <!-- input -->
+      <!-- <input type="text" id="search-target">
+      <span class="icon" onclick="searchHandle()"></span> -->
+    </div>
+    <div class="list" id="list">
+      <!-- <div class=" card">
+        <div class="card-header"><span onclick="edit()">编辑</span><i>/</i><span onclick="del()">删除</span></div>
+        <div class="card-body">第一</div>
+      </div> -->
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="./search.js"></script>
+<script>
+  var Search = $.Search
+  var options = {
+    searchEl: '#search-contain',
+    listEl: '#list',
+    list: [{
+      name: '第一'
+    }, {
+      name: '第二'
+    }, {
+      name: '第三'
+    }, {
+      name: '第四'
+    }, {
+      name: '第五'
+    }],
+    hasRole: true,
+    appTypeList: []
+  }
+  var search = new Search(options)
+  search.init()
+
+  function edit() {
+    console.log('edit')
+  }
+
+  function del() {
+    console.log('del')
+  }
+</script>
